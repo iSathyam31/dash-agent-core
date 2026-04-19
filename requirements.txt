@@ -1,0 +1,11 @@
+psycopg2-binary
+psycopg[binary]
+python-dotenv
+Faker
+agno
+streamlit
+openai
+pandas
+plotly
+sqlalchemy
+pgvector
