@@ -1,0 +1,15 @@
+{
+  "table_name": "users",
+  "description": "Stores customer profiles and contact details.",
+  "columns": [
+    {"name": "user_id", "type": "INTEGER", "description": "Unique identifier for the customer (Primary Key)."},
+    {"name": "first_name", "type": "VARCHAR", "description": "Legal first name of the customer."},
+    {"name": "last_name", "type": "VARCHAR", "description": "Legal last name of the customer."},
+    {"name": "email", "type": "VARCHAR", "description": "Primary email address used for communication and login."},
+    {"name": "phone", "type": "VARCHAR", "description": "Contact phone number."},
+    {"name": "address", "type": "TEXT", "description": "Shipping or billing address street and house number."},
+    {"name": "city", "type": "VARCHAR", "description": "City of residence."},
+    {"name": "zip_code", "type": "VARCHAR", "description": "Postal or zip code."},
+    {"name": "created_at", "type": "TIMESTAMP", "description": "DateTime when the user account was created."}
+  ]
+}

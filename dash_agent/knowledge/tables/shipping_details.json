@@ -1,0 +1,12 @@
+{
+  "table_name": "shipping_details",
+  "description": "Logistics and tracking information for orders.",
+  "columns": [
+    {"name": "shipping_id", "type": "INTEGER", "description": "PK."},
+    {"name": "order_id", "type": "INTEGER", "description": "FK to orders."},
+    {"name": "tracking_number", "type": "VARCHAR", "description": "Global tracking ID."},
+    {"name": "carrier", "type": "VARCHAR", "description": "The shipping company (UPS, FedEx, DHL, etc.)."},
+    {"name": "shipping_status", "type": "VARCHAR", "description": "Current status (Pending, Shipped, Delivered)."},
+    {"name": "estimated_delivery", "type": "DATE", "description": "The target date for delivery."}
+  ]
+}

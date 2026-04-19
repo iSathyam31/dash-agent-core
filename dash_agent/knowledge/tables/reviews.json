@@ -1,0 +1,12 @@
+{
+  "table_name": "reviews",
+  "description": "Product ratings and feedback.",
+  "columns": [
+    {"name": "review_id", "type": "INTEGER", "description": "PK."},
+    {"name": "product_id", "type": "INTEGER", "description": "FK to products."},
+    {"name": "user_id", "type": "INTEGER", "description": "FK to users."},
+    {"name": "rating", "type": "INTEGER", "description": "1 to 5 stars."},
+    {"name": "comment", "type": "TEXT", "description": "Feedback text."},
+    {"name": "created_at", "type": "TIMESTAMP", "description": "Date of review."}
+  ]
+}

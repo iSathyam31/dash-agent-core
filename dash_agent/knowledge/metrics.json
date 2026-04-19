@@ -1,0 +1,64 @@
+{
+  "metrics": [
+    {
+      "name": "Total Revenue",
+      "id": "total_revenue",
+      "description": "Total value of successful sales.",
+      "sql_logic": "SELECT SUM(total_amount) FROM ecommerce.orders WHERE status != 'Cancelled'"
+    },
+    {
+      "name": "Average Order Value (AOV)",
+      "id": "aov",
+      "description": "Average transaction value per order.",
+      "sql_logic": "SELECT AVG(total_amount) FROM ecommerce.orders WHERE status != 'Cancelled'"
+    },
+    {
+      "name": "Revenue by Category",
+      "id": "revenue_by_cat",
+      "description": "Income contribution from each product category.",
+      "sql_logic": "SELECT c.name, SUM(oi.quantity * oi.unit_price) FROM ecommerce.categories c JOIN ecommerce.products p ON c.category_id = p.category_id JOIN ecommerce.order_items oi ON p.product_id = oi.product_id GROUP BY c.name"
+    },
+    {
+      "name": "Customer Acquisition",
+      "id": "customer_acq",
+      "description": "New users registered in the system.",
+      "sql_logic": "SELECT COUNT(*) FROM ecommerce.users"
+    },
+    {
+      "name": "Repeat Customer Rate",
+      "id": "repeat_cust_rate",
+      "description": "Percentage of customers with more than one order.",
+      "sql_logic": "WITH counts AS (SELECT user_id, COUNT(*) as cnt FROM ecommerce.orders GROUP BY user_id) SELECT (COUNT(CASE WHEN cnt > 1 THEN 1 END)::float / COUNT(*)) * 100 FROM counts"
+    },
+    {
+      "name": "Average Rating",
+      "id": "avg_rating",
+      "description": "Product satisfaction score.",
+      "sql_logic": "SELECT AVG(rating) FROM ecommerce.reviews"
+    },
+    {
+      "name": "Payment Success Rate",
+      "id": "pay_success_rate",
+      "description": "Percentage of payments that succeeded.",
+      "sql_logic": "SELECT (COUNT(CASE WHEN status = 'Success' THEN 1 END)::float / COUNT(*)) * 100 FROM ecommerce.payments"
+    },
+    {
+      "name": "Shipping Lead Time",
+      "id": "shipping_lead_time",
+      "description": "Average days to deliver an order.",
+      "sql_logic": "SELECT AVG(estimated_delivery - CAST(order_date AS DATE)) FROM ecommerce.shipping_details sd JOIN ecommerce.orders o ON sd.order_id = o.order_id WHERE sd.shipping_status = 'Delivered'"
+    },
+    {
+      "name": "Inventory Health",
+      "id": "low_stock_count",
+      "description": "Count of products with stock below 20 units.",
+      "sql_logic": "SELECT COUNT(*) FROM ecommerce.products WHERE stock_quantity < 20"
+    },
+    {
+      "name": "Order Cancellation Rate",
+      "id": "cancel_rate",
+      "description": "Percentage of orders that were cancelled.",
+      "sql_logic": "SELECT (COUNT(CASE WHEN status = 'Cancelled' THEN 1 END)::float / COUNT(*)) * 100 FROM ecommerce.orders"
+    }
+  ]
+}

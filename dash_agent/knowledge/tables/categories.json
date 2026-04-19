@@ -1,0 +1,9 @@
+{
+  "table_name": "categories",
+  "description": "Product groupings.",
+  "columns": [
+    {"name": "category_id", "type": "INTEGER", "description": "PK."},
+    {"name": "name", "type": "VARCHAR", "description": "Category name."},
+    {"name": "description", "type": "TEXT", "description": "Description."}
+  ]
+}

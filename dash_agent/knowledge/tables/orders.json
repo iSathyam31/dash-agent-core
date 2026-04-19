@@ -1,0 +1,11 @@
+{
+  "table_name": "orders",
+  "description": "High-level transaction records.",
+  "columns": [
+    {"name": "order_id", "type": "INTEGER", "description": "Unique identifier for the order."},
+    {"name": "user_id", "type": "INTEGER", "description": "The customer who placed the order (FK to users)."},
+    {"name": "order_date", "type": "TIMESTAMP", "description": "When the order was placed."},
+    {"name": "status", "type": "VARCHAR", "description": "Current state: Pending, Processing, Shipped, Delivered, or Cancelled."},
+    {"name": "total_amount", "type": "DECIMAL", "description": "The total value of the order including all items."}
+  ]
+}

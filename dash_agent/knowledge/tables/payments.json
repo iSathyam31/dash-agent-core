@@ -1,0 +1,12 @@
+{
+  "table_name": "payments",
+  "description": "Financial transaction data for orders.",
+  "columns": [
+    {"name": "payment_id", "type": "INTEGER", "description": "PK."},
+    {"name": "order_id", "type": "INTEGER", "description": "FK to orders."},
+    {"name": "payment_date", "type": "TIMESTAMP", "description": "When the payment was processed."},
+    {"name": "amount", "type": "DECIMAL", "description": "The exact amount paid."},
+    {"name": "payment_method", "type": "VARCHAR", "description": "Credit Card, PayPal, Stripe, etc."},
+    {"name": "status", "type": "VARCHAR", "description": "Success, Failed, or Pending."}
+  ]
+}

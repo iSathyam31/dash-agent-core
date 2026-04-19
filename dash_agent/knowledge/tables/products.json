@@ -1,0 +1,12 @@
+{
+  "table_name": "products",
+  "description": "Catalog of all items available for purchase.",
+  "columns": [
+    {"name": "product_id", "type": "INTEGER", "description": "Unique identifier for the product (Primary Key)."},
+    {"name": "name", "type": "VARCHAR", "description": "Display name of the product."},
+    {"name": "description", "type": "TEXT", "description": "Detailed marketing and technical description of the product."},
+    {"name": "price", "type": "DECIMAL", "description": "Current selling price per unit."},
+    {"name": "stock_quantity", "type": "INTEGER", "description": "Current inventory levels in the warehouse."},
+    {"name": "category_id", "type": "INTEGER", "description": "Link to the categories table (Foreign Key)."}
+  ]
+}

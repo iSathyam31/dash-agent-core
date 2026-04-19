@@ -1,0 +1,11 @@
+{
+  "table_name": "order_items",
+  "description": "Specific products inside an order.",
+  "columns": [
+    {"name": "order_item_id", "type": "INTEGER", "description": "PK."},
+    {"name": "order_id", "type": "INTEGER", "description": "FK to orders."},
+    {"name": "product_id", "type": "INTEGER", "description": "FK to products."},
+    {"name": "quantity", "type": "INTEGER", "description": "Units sold."},
+    {"name": "unit_price", "type": "DECIMAL", "description": "Price at sale."}
+  ]
+}
